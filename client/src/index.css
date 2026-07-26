@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-chalk-50 text-ink-900 dark:bg-ink-950 dark:text-chalk-100 font-sans antialiased;
+}
+
+/* The "tape measure" stock bar: a signature element used across the app to
+   represent stock levels, styled like the tick marks on a tailor's tape. */
+.tape-bar {
+  position: relative;
+  height: 10px;
+  border-radius: 2px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(21, 23, 28, 0.12) 0px,
+    rgba(21, 23, 28, 0.12) 1px,
+    transparent 1px,
+    transparent 6px
+  );
+  background-color: theme("colors.chalk.200");
+  overflow: hidden;
+}
+.dark .tape-bar {
+  background-color: theme("colors.ink.800");
+}
+.tape-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid theme("colors.brass.500");
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
