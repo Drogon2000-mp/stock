@@ -13,6 +13,7 @@ import SalesHistory from "./pages/Sales/SalesHistory.jsx";
 import AddStock from "./pages/Stock/AddStock.jsx";
 import InventoryHistory from "./pages/History/InventoryHistory.jsx";
 import Reports from "./pages/Reports/Reports.jsx";
+import Exchange from "./pages/Exchange/Exchange.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/products" element={<ProductList />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/sales/history" element={<SalesHistory />} />
+            <Route path="/exchange" element={<Exchange />} />
 
             <Route element={<ProtectedRoute adminOnly />}>
               <Route path="/sales/new" element={<SellStock />} />

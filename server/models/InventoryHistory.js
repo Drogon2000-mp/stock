@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const MOVEMENT_TYPES = ["SALE", "ADD_STOCK", "RETURN", "ADJUSTMENT"];
+const MOVEMENT_TYPES = ["SALE", "ADD_STOCK", "RETURN", "ADJUSTMENT", "EXCHANGE"];
 
 const inventoryHistorySchema = new mongoose.Schema(
   {
@@ -17,6 +17,12 @@ const inventoryHistorySchema = new mongoose.Schema(
     invoiceNumber: { type: String, default: null },
     supplier: { type: mongoose.Schema.Types.ObjectId, ref: "Supplier", default: null },
     remarks: { type: String, trim: true, default: "" },
+    // Exchange specific fields
+    exchangedFrom: { type: mongoose.Schema.Types.ObjectId, ref: "Product", default: null },
+    exchangedFromDetails: { type: String, default: null }, // Store product name, size, color
+    unitPrice: { type: Number, default: null },
+    totalValue: { type: Number, default: null },
+    reason: { type: String, trim: true, default: null }, // Reason for adjustment, return, or exchange
   },
   { timestamps: true }
 );

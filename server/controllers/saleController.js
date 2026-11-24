@@ -80,6 +80,8 @@ export const createSale = async (req, res) => {
           updatedBy: req.user._id,
           invoiceNumber,
           remarks: remarks || "",
+          unitPrice: product.price,
+          totalValue: product.price * item.quantity,
         });
       }
 

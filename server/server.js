@@ -20,6 +20,7 @@ import saleRoutes from "./routes/saleRoutes.js";
 import historyRoutes from "./routes/historyRoutes.js";
 import reportRoutes from "./routes/reportRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
+import exchangeRoutes from "./routes/exchangeRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -54,6 +55,7 @@ app.use("/api/sales", saleRoutes);
 app.use("/api/history", historyRoutes);
 app.use("/api/reports", reportRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/exchanges", exchangeRoutes);
 
 // ─── Serve Frontend (Production) ──────────────────────────────────────────
 if (process.env.NODE_ENV === "production") {

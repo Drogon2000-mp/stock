@@ -7,6 +7,7 @@ import {
   LuHistory,
   LuChartBar,
   LuReceipt,
+  LuRefreshCw,
 } from "react-icons/lu";
 import { useAuth } from "../../context/AuthContext";
 
@@ -35,6 +36,9 @@ const Sidebar = ({ onNavigate }) => {
       </NavLink>
       <NavLink to="/sales/history" className={linkClass} onClick={onNavigate}>
         <LuReceipt size={18} /> Sales History
+      </NavLink>
+      <NavLink to="/exchange" className={linkClass} onClick={onNavigate}>
+        <LuRefreshCw size={18} /> Exchange
       </NavLink>
 
       {isAdmin && (

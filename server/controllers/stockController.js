@@ -48,6 +48,8 @@ export const addStock = async (req, res) => {
           updatedBy: req.user._id,
           supplier: supplier || null,
           remarks: remarks || "",
+          unitPrice: product.price,
+          totalValue: product.price * item.quantity,
         });
       }
 
